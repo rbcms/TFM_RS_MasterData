@@ -1,5 +1,0 @@
-A continuación de describen los archivos y organización de los contenidos en el siguiente proyecto.
-
-RSmodule.py ----->>> Este es el archivo más importante y es el que ejecuta el recomendador. Ejecuta las funciones anexas en el resto del proyecto y  que va importando.
-
-RSmodule_test.py ----->>> Mismo archivo pero de prueba.
