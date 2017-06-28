@@ -21,6 +21,15 @@ Kmeand_test.py ----->>>
 Kmeand_super_simple.py ----->>>
 
 
+DATOS:
+
+Data_Page_clean ----->>>
+Datos pertenecientes a la navegación.
+Leyenda explicaciones aquí
+
+
+
+
 
 
 
