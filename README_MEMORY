@@ -1,0 +1,28 @@
+"""
+TFM >> SISTEMAS RECOMENDADORES PARA eCOMMERCE RETAIL
+
+Los recomendadores son en base a Filtrado Colaborativo, basados en memoria.
+Los datos datos se obtienen de la web. A partir de estos dotos, deducimos distintos eventos.
+Estos son por tanto valoraciones implícitas de los usarios.
+Las datos a partir de los cuales se extraen dichos datos son los que aparecen explicados en el ANEXO_1
+
+En este proyecto se realizan 3 RS:
+El primero de ellos es un RS_FC_basado en el user.
+Proceso:
+Limpieza de datos, preprocesamiento de los datos, PCA, Kmeans, similaridad (Coseno, Pearson y Jaccard)
+Predicción
+Evaluación.
+
+El segundo:
+
+FALTAAA
+
+EL tercero:
+
+??????
+
+DATOS:
+
+
+
+"""

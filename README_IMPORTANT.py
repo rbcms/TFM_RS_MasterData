@@ -3,7 +3,9 @@ ESQUEMA CONTENIDOS FUNCIONALES:
 
 Archivos contenidos en el TFM fin de Master.
 
+
 RSmodule.py ----->>> CONTIENE LA LÓGICA DEL NEGOCIO.
+
 Este es el archivo más importante y es el que ejecuta el recomendador.
 Importa las funciones anexas en el resto de archivos.
 
