@@ -33,7 +33,7 @@ hd_page_df.info()
 
 
 # seleccionamos columnas que mas nos interesan.
-hd_page_df_reduce = hd_page_df[['idPage','idUser', 'idBuyer', 'idSession', 'idItem']]
+hd_page_df_reduce = hd_page_df[['idPage','idBuyer', 'idSession', 'idItem']]
 
 print("Primeras 10 líneas con las columnas que queremos")
 print(hd_page_df_reduce.head(10))
@@ -43,17 +43,9 @@ print("Cantidad de sesiones que son recurrentes")
 session_count = hd_page_df_reduce.groupby('idSession').size().sort_values(ascending=False)
 print (session_count[:10])
 
-num_item = hd_page_df['idItem'].value_counts()
-num_item[:20]
 
-print("Valores únicos de cada columna")
-
-def count_unique(column):
-     return len(column.unique())
-
-valores = hd_page_df_reduce[['idPage','idUser', 'idBuyer', 'idSession', 'idItem']].apply(count_unique, axis=0).astype(np.int32)
-print(valores)
-
+print("Númdsjdlgjhdlkfgh")
+session_count == 1
 """
 Tras efectuar un primer Kmeans me doy cuenta de la grandísima dispersión que tengo.
 Por ello efectúo un PCA que se puede ver el archivo K_mens_test.py
