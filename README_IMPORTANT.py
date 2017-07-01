@@ -6,8 +6,7 @@ Archivos contenidos en el TFM fin de Master.
 
 RSmodule.py ----->>> CONTIENE LA LÓGICA DEL NEGOCIO.
 
-Este es el archivo más importante y es el que ejecuta el recomendador.
-Importa las funciones anexas en el resto de archivos.
+Este archivo contiene la relación de funciones manejadas en el prouecto.
 
 RSmodule_test.py ----->>>
 Mismo archivo con pruebas varias.
