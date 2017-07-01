@@ -12,8 +12,8 @@ En este archivo se preprocesan algunos de los datos de distintas tablas.
 Es decir, aquellos artículos que se añadieron a la cesta. 
 
 ** det_users_list >> funcion para cargar la lista de id's de usuario
-** def get_users_list >>
-** def get_items_list >>
+** def get_users_list >> todos los usuarios
+** def get_items_list >> todos los articulos
 
 """
 
