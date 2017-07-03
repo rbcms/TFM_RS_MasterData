@@ -1,7 +1,4 @@
-import numpy as np
-import RSmodule
-import pandas as pd
-import os
+
 """
 NOTAS DATAJOIN:
 
@@ -10,11 +7,13 @@ ESTE ARCHIVO PREPROCESA LOS DATOS PARA LUEGO GENERAR LOS RATINGS.
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 OJO CON EL VECTOR PRICEEEE VER QUE HAGO AL FINAL AL RESPECTO....cuidadito que me puede dar fallo.
 
-
-
-
-
 """
+
+import numpy as np
+import RSmodule
+import pandas as pd
+import os
+
 
 def user_orders_df():
 
