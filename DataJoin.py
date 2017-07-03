@@ -8,7 +8,7 @@ NOTAS DATAJOIN:
 ESTE ARCHIVO PREPROCESA LOS DATOS PARA LUEGO GENERAR LOS RATINGS.
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-OJO CON EL VECTOR PRICEEEE VER QUE HAGO AL FINAL AL RESPECTO.
+OJO CON EL VECTOR PRICEEEE VER QUE HAGO AL FINAL AL RESPECTO....cuidadito que me puede dar fallo.
 
 
 
@@ -17,6 +17,7 @@ OJO CON EL VECTOR PRICEEEE VER QUE HAGO AL FINAL AL RESPECTO.
 """
 
 def user_orders_df():
+
     """
     hd_total_order + rs_user + hd_order
 
@@ -34,8 +35,10 @@ def user_orders_df():
     nota: a priori no utilizo el país pero lo dejo preparado.
     5._resultado
 
-    :return:
+    :return: df_2
+
     """
+
     directory = './DATA/IntropiaCSV'
 
     fnames = list()
@@ -43,10 +46,10 @@ def user_orders_df():
     fnames.append('rs_user.csv')
     fnames.append('hd_order.csv')
 
+    # del directorio especificado, los archivos de la lista fnames.
     hd_total_order, rs_user, hd_order = RSmodule.load_data(directory, fnames)
 
     rs_user.rename(columns={'active': 'active_user'}, inplace=True)
-
     hd_order.rename(columns={'active': 'active_order'}, inplace=True)
 
     # print(hd_total_order.head(10))
@@ -59,9 +62,9 @@ def user_orders_df():
 
     # print(df_1.head(10))
 
-    # reemplazo de los países
+    # reemplazo de los países cambio tipo variable
     c_dict = dict()  # diccionario de pais->numero
-    c_inv_dict = dict()  # diccionario de numero-> pais
+    c_inv_dict = dict()  # diccionario de numero-> pais (por tener referencia)
     paises = df_2['misc'].unique()  # valores únicos de paises
     for idx, pais in enumerate(paises):
         c_dict[pais] = idx * 100  # entrada en el diccionario pais->numero
@@ -73,6 +76,7 @@ def user_orders_df():
 
 
 def user_purchase_df():
+
     """
     hd_total_order + rs_user + hd_order
 
@@ -84,10 +88,9 @@ def user_purchase_df():
     PROCESO:
     1._cargamos datos ( funcion load_data en RSmodule )
     2._es un merge a 3, primero 2 y el resultado contra el 3.
-    3._resultado
 
-    :return:
     """
+
     directory = './DATA/IntropiaCSV'
 
     fnames = list()
@@ -109,6 +112,7 @@ def user_purchase_df():
 
 
 def get_navigation_df():
+
     """
     función para cargar el archivo
 
@@ -130,13 +134,14 @@ def get_navigation_df():
 
 
 def get_users_list():
+
     """
     rs_user + hd_page1
 
     funcion para cargar la lista de id's de usuario.
     comprobamos que corresponden en ambas tablas.
 
-    :return: usuarios únicos de las tablas.
+    :return: usuarios únicos de la lista completa.
 
     """
     directory = './DATA/IntropiaCSV'
@@ -157,14 +162,14 @@ def get_users_list():
 
 
 
-
 def get_items_list():
+
     """
     funcion para cargar la lista de id's de items
     comprobamos que son los items únicos en las 3 tablas.
 
 
-    :return: lista de items únicos de las tres tablas que relacionamos.
+    :return: items únicos de la lista completa.
 
     """
     directory = './DATA/IntropiaCSV'
@@ -192,7 +197,7 @@ def get_items_list():
 def get_all_the_data():
 
     """
-    Función para crear las matrices sparse con los los datos.
+    Función carga las matrices sparse con los los datos.
     Creo la matriz sparse orders y la matriz purchase.
 
     :return:
@@ -221,7 +226,8 @@ def get_all_the_data():
         # OJO DEJO COMENTARIO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-        # reflexión: tiene sentido que recomiende en base a price.
+        # reflexión: tiene sentido que recomiende en base a price??????
+
         user_price_vec = RSmodule.make_sparse_vector(user_purchase, rows_array, 'idUser', 'price')
 
 
@@ -239,8 +245,9 @@ def get_all_the_data():
 
     return mat_usr_item_orders, mat_usr_purchase_orders, user_price_vec, row_labels_orders, col_labels_orders
 
-# Ejecuta en este archivo si existe.
 
+
+# Ejecuta aquí en este archivo si existe en este.
 
 if __name__ == '__main__':
 
