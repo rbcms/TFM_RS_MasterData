@@ -7,4 +7,4 @@ Welcome!!!
 SISTEMA DE RECOMENDADORES FILTRADO COLABORATIVO<br>
 La memoria e instrucciones se pueden ver siguiendo el <a href="http://files.grouplens.org/datasets/movielens/">enlace >></a> </strong><br><br>
 <br><br><br>
-for S.</a> </strong><br>
+para S.</a> </strong><br>
