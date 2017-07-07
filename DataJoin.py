@@ -1,12 +1,6 @@
-
 """
-
-NOTAS DATAJOIN:
-
-ESTE ARCHIVO PREPROCESA LOS DATOS PARA LUEGO GENERAR LOS RATINGS.
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-OJO CON EL VECTOR PRICEEEE VER QUE HAGO AL FINAL AL RESPECTO....cuidadito que me puede dar fallo.
+DataJoin:
+Contiene funciones relativas a carga de datos y aquellas necesarias para otras funciones más complejas.
 
 """
 
@@ -15,30 +9,25 @@ import RSmodule
 import pandas as pd
 import os
 
+"""
+FUNCIONES:
 
 def user_orders_df():
+def user_purchase_df():
+def get_users_list():
+def get_all_the_data():
 
+########################################################################################
+
+def user_purchase2_df():
+
+"""
+
+def user_orders_df():
     """
     hd_total_order + rs_user + hd_order
-
-    Hacemos el merge de estas 3 tablas para luego obtener el evento "order".
-    Este evento representa los carritos generados por los usuarios.
-    Los artículos cargados en los carritos pueden acabar siendo compra (purchase) o no.
-
-    :return: df_2
-
-    PROCESO:
-    1._cargamos datos ( funcion load_data en RSmodule )
-    2._renombramos algunas columnas evitar equívocos.
-    3._es un merge a 3, primero 2 y el resultado contra el 3.
-    4._cambio de variable categoríca de la columna "misc" (paises) a valor numérico.
-    nota: a priori no utilizo el país pero lo dejo preparado.
-    5._resultado
-
-    :return: df_2
-
+    :return:
     """
-
     directory = './DATA/IntropiaCSV'
 
     fnames = list()
@@ -46,10 +35,10 @@ def user_orders_df():
     fnames.append('rs_user.csv')
     fnames.append('hd_order.csv')
 
-    # del directorio especificado, los archivos de la lista fnames.
     hd_total_order, rs_user, hd_order = RSmodule.load_data(directory, fnames)
 
     rs_user.rename(columns={'active': 'active_user'}, inplace=True)
+
     hd_order.rename(columns={'active': 'active_order'}, inplace=True)
 
     # print(hd_total_order.head(10))
@@ -62,9 +51,9 @@ def user_orders_df():
 
     # print(df_1.head(10))
 
-    # reemplazo de los países cambio tipo variable
+    # reemplazo de los países
     c_dict = dict()  # diccionario de pais->numero
-    c_inv_dict = dict()  # diccionario de numero-> pais (por tener referencia)
+    c_inv_dict = dict()  # diccionario de numero-> pais
     paises = df_2['misc'].unique()  # valores únicos de paises
     for idx, pais in enumerate(paises):
         c_dict[pais] = idx * 100  # entrada en el diccionario pais->numero
@@ -76,21 +65,10 @@ def user_orders_df():
 
 
 def user_purchase_df():
-
     """
-    hd_total_order + rs_user + hd_order
-
-    Hacemos el merge de estas 3 tablas para luego obtener el evento "purchase".
-    Este evento representa las compras generados por los usuarios.
-
-    :return: df_2
-
-    PROCESO:
-    1._cargamos datos ( funcion load_data en RSmodule )
-    2._es un merge a 3, primero 2 y el resultado contra el 3.
-
+    hd_total_purchase + rs_user + hd_purchase
+    :return:
     """
-
     directory = './DATA/IntropiaCSV'
 
     fnames = list()
@@ -112,14 +90,6 @@ def user_purchase_df():
 
 
 def get_navigation_df():
-
-    """
-    función para cargar el archivo
-
-    :return: hd_page_df
-
-    """
-
     folder = './DATA/IntropiaCSV'
     filename = 'hd_page1.csv'
 
@@ -133,16 +103,13 @@ def get_navigation_df():
     return hd_page_df
 
 
-def get_users_list():
 
+def get_users_list():
     """
     rs_user + hd_page1
 
-    funcion para cargar la lista de id's de usuario.
-    comprobamos que corresponden en ambas tablas.
-
-    :return: usuarios únicos de la lista completa.
-
+    funcion para cargar la lista de id's de usuario
+    :return:
     """
     directory = './DATA/IntropiaCSV'
     fnames = list()
@@ -163,14 +130,9 @@ def get_users_list():
 
 
 def get_items_list():
-
     """
-    funcion para cargar la lista de id's de items
-    comprobamos que son los items únicos en las 3 tablas.
-
-
-    :return: items únicos de la lista completa.
-
+    funcion para cargar la lista de id's de usuario
+    :return:
     """
     directory = './DATA/IntropiaCSV'
     fnames = list()
@@ -195,14 +157,6 @@ def get_items_list():
 
 
 def get_all_the_data():
-
-    """
-    Función carga las matrices sparse con los los datos.
-    Creo la matriz sparse orders y la matriz purchase.
-
-    :return:
-    """
-
     fname = 'usr_item.pkl'
 
     if not os.path.exists(fname):
@@ -223,13 +177,7 @@ def get_all_the_data():
                                                                                              cols_array, 'idUser',
                                                                                              'idProduct')
 
-        # OJO DEJO COMENTARIO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-        # reflexión: tiene sentido que recomiende en base a price??????
-
         user_price_vec = RSmodule.make_sparse_vector(user_purchase, rows_array, 'idUser', 'price')
-
 
         # guardo la informacion en unpickle
         print('saving pickle...')
@@ -246,11 +194,28 @@ def get_all_the_data():
     return mat_usr_item_orders, mat_usr_purchase_orders, user_price_vec, row_labels_orders, col_labels_orders
 
 
-
-# Ejecuta aquí en este archivo si existe en este.
-
 if __name__ == '__main__':
 
     # users_list_ = get_users_list()
     df = user_purchase_df()
     print(df.head(200))
+
+
+
+
+    folder = './DATA/IntropiaCSV'########################################################################################
+
+def user_purchase2_df():
+    filename = 'hd_purchase_2.csv'
+
+    path = os.path.join(folder, filename)
+
+    print(path, os.path.exists(path))
+
+    print('loading...')
+    hd_purchase_2_df = pd.read_csv(path, sep=';', header=0, index_col=0)
+
+    return hd_purchase_2_df
+
+
+
