@@ -34,7 +34,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'TFM_look'
+    'static'
 )
 
 MIDDLEWARE_CLASSES = (
