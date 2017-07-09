@@ -1,0 +1,4 @@
+{
+    "Jan"            : {  "name" : "Jan sin", "description" : "Sample GPS logg from Jan"},
+   "fanekartgps"    : {  "name" : "Fanekart GPS", "description" : "Demo of fanekart GPS"}
+}
