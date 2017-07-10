@@ -1,2 +1,0 @@
-# pydata-essentials
-PyData Essentials
