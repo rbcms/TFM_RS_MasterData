@@ -1,8 +1,3 @@
-"""
-RSmodule: este archivo contine una relación de las funciones fundamentales empleadas en el proyecto.
-
-"""
-
 import os
 import pandas as pd
 import numpy as np
@@ -11,28 +6,6 @@ import pickle
 from sklearn import manifold
 from matplotlib import pyplot as plt
 
-
-"""
-
-FUNCIONES:
-
-def save_pickle(fname, data1):
-def open_pickle(fname):
-def plotManifold(X, color=None, size=2):
-def plot2D(Y):
-def make_index_dict(arr):
-def make_sparse(df, rows_array, cols_array, df_rows_attr, df_cols_attr):
-def load_data(folder, files_list):
-def recomendacion_kmeans(kmeans, X_train, clusters_pred, item_lbl, colname):
-
-#####################################################################333
-
-def user_purchase2_df >> NO ME FUNCIONA
-
-
-"""
-
-# añadido estilo para  pantalla.
 pd.set_option('display.height', 1000)
 pd.set_option('display.max_rows', 500)
 pd.set_option('display.max_columns', 500)
@@ -50,7 +23,6 @@ def open_pickle(fname):
 
 
 def plotManifold(X, color=None, size=2):
-
     """
     Representacion 2D del datos N-Dimensionales
     :param X: Matrix de puntos n-D
@@ -67,7 +39,6 @@ def plotManifold(X, color=None, size=2):
 
 
 def plot2D(Y):
-
     """
     Representacion 2D del datos N-Dimensionales
     :param X: Matrix de puntos n-D
@@ -81,7 +52,6 @@ def plot2D(Y):
 
 
 def make_index_dict(arr):
-
     """
     Crea un diccionario que funciona al revés que un array
     :param arr: Array de valores
@@ -94,7 +64,6 @@ def make_index_dict(arr):
 
 
 def make_sparse(df, rows_array, cols_array, df_rows_attr, df_cols_attr):
-
     """
     Generar matriz sparse con los dos atributos provistos
     :param df: Dataframe original
@@ -133,7 +102,6 @@ def make_sparse(df, rows_array, cols_array, df_rows_attr, df_cols_attr):
 
 
 def make_sparse_vector(df, rows_array, df_rows_attr, df_cols_attr):
-
     """
     Generar matriz sparse con los dos atributos provistos
     :param df: Dataframe original

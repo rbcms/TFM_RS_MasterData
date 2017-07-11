@@ -1,34 +1,15 @@
-"""
-DataJoin:
-Contiene funciones relativas a carga de datos y aquellas necesarias para otras funciones más complejas.
-
-"""
-
 import numpy as np
 import RSmodule
 import pandas as pd
 import os
 
-"""
-FUNCIONES:
-
-def user_orders_df():
-def user_purchase_df():
-def get_users_list():
-def get_all_the_data():
-
-########################################################################################
-
-def user_purchase2_df():
-
-"""
 
 def user_orders_df():
     """
     hd_total_order + rs_user + hd_order
     :return:
     """
-    directory = './DATA/IntropiaCSV'
+    directory = '../DATA/IntropiaCSV'
 
     fnames = list()
     fnames.append('hd_total_order.csv')
@@ -66,10 +47,10 @@ def user_orders_df():
 
 def user_purchase_df():
     """
-    hd_total_purchase + rs_user + hd_purchase
+    hd_total_order + rs_user + hd_order
     :return:
     """
-    directory = './DATA/IntropiaCSV'
+    directory = '../DATA/IntropiaCSV'
 
     fnames = list()
     fnames.append('hd_total_purchase.csv')
@@ -90,7 +71,7 @@ def user_purchase_df():
 
 
 def get_navigation_df():
-    folder = './DATA/IntropiaCSV'
+    folder = '../DATA/IntropiaCSV'
     filename = 'hd_page1.csv'
 
     path = os.path.join(folder, filename)
@@ -103,7 +84,6 @@ def get_navigation_df():
     return hd_page_df
 
 
-
 def get_users_list():
     """
     rs_user + hd_page1
@@ -111,7 +91,7 @@ def get_users_list():
     funcion para cargar la lista de id's de usuario
     :return:
     """
-    directory = './DATA/IntropiaCSV'
+    directory = '../DATA/IntropiaCSV'
     fnames = list()
     fnames.append('rs_user.csv')
     fnames.append('hd_page1.csv')
@@ -129,12 +109,13 @@ def get_users_list():
 
 
 
+
 def get_items_list():
     """
     funcion para cargar la lista de id's de usuario
     :return:
     """
-    directory = './DATA/IntropiaCSV'
+    directory = '../DATA/IntropiaCSV'
     fnames = list()
     fnames.append('hd_page1.csv')
     fnames.append('hd_order.csv')
@@ -199,23 +180,3 @@ if __name__ == '__main__':
     # users_list_ = get_users_list()
     df = user_purchase_df()
     print(df.head(200))
-
-
-
-
-    folder = './DATA/IntropiaCSV'########################################################################################
-
-def user_purchase2_df():
-    filename = 'hd_purchase_2.csv'
-
-    path = os.path.join(folder, filename)
-
-    print(path, os.path.exists(path))
-
-    print('loading...')
-    hd_purchase_2_df = pd.read_csv(path, sep=';', header=0, index_col=0)
-
-    return hd_purchase_2_df
-
-
-
