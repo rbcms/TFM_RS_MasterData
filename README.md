@@ -3,7 +3,7 @@
 Este es mi sistema de recomendación >> basado en filtrado colaborativo. Es un prototipo a modo de ejercicio.
 Los datos para poder ejecutarlo están disponibles en el siguiente enlace:
 
-# INSTRUCCIONES:
+DESCARGA DE LOS DATOS:
 https://www.dropbox.com/s/6z4l35g31zjx9hd/DATA.tar.gz?dl=0
 
 
