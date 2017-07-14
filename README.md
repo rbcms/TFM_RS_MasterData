@@ -13,3 +13,26 @@ La memoria y mas explicaciones pueden verse en la siguiente dirección.
 http://rebecatfm.pythonanywhere.com/masterdata/index.html
 
 
+Dependencias y paquetes a instalar:
+
+sklearn.cluster, KMeans, SpectralClustering, Birch
+sklearn.decomposition, RandomizedPCA, TruncatedSVD
+sklearn.neighbors, KNeighborsClassifier, KNeighborsRegressor
+sklearn.model_selection import train_test_split
+scipy.sparse, lil_matrix
+sklearn, manifold
+
+os
+pickle
+numpy as np
+pandas as pd
+matplotlib, pyplot
+import os
+import sys
+
+import RSmodule
+import DataJoin
+import RSmodule
+
+
+
