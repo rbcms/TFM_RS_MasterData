@@ -15,24 +15,24 @@ http://rebecatfm.pythonanywhere.com/masterdata/index.html
 
 Dependencias y paquetes a instalar:
 
-sklearn.cluster, KMeans, SpectralClustering, Birch
-sklearn.decomposition, RandomizedPCA, TruncatedSVD
-sklearn.neighbors, KNeighborsClassifier, KNeighborsRegressor
-sklearn.model_selection import train_test_split
-scipy.sparse, lil_matrix
-sklearn, manifold
-
-os
-pickle
-numpy as np
-pandas as pd
-matplotlib, pyplot
-import os
-import sys
-
-import RSmodule
-import DataJoin
-import RSmodule
+sklearn.cluster, KMeans, SpectralClustering, Birch <br>
+sklearn.decomposition, RandomizedPCA, TruncatedSVD<br>
+sklearn.neighbors, KNeighborsClassifier, KNeighborsRegressor<br>
+sklearn.model_selection import train_test_split<br>
+scipy.sparse, lil_matrix<br>
+sklearn, manifold<br>
+<br><br>
+os<br>
+pickle<br>
+numpy as np<br>
+pandas as pd<br>
+matplotlib, pyplot<br>
+import os<br>
+import sys<br>
+<br><br>
+import RSmodule<br>
+import DataJoin<br>
+import RSmodule<br>
 
 
 
