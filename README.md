@@ -13,7 +13,7 @@ La memoria y mas explicaciones pueden verse en la siguiente dirección.
 http://rebecatfm.pythonanywhere.com/masterdata/index.html
 
 
-Dependencias y paquetes a instalar:
+DEPENDENCIAS Y PAQUETES A INSTALAR:
 
 sklearn.cluster, KMeans, SpectralClustering, Birch <br>
 sklearn.decomposition, RandomizedPCA, TruncatedSVD<br>
